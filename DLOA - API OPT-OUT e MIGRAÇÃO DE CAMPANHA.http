@@ -1,0 +1,6 @@
+@DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA_HostAddress = http://localhost:5113
+
+GET {{DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

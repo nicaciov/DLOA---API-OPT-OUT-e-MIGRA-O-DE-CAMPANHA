@@ -1,0 +1,272 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Interplayers Gateway API",
+    "description": "Gateway para encapsulamento das APIs da plataforma Interplayers Loyalty.\n\n**Tarefa 1:** Opt-out de canais de comunicação (LGPD)\n\n**Tarefa 2:** Migração de campanha para segmentação de pacientes PDV",
+    "contact": {
+      "name": "Nicacio INC",
+      "email": "dev@nicacio.com.br"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Campaign/migrate": {
+      "patch": {
+        "tags": [
+          "Campaign"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CampaignMigrateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CampaignMigrateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CampaignMigrateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GatewaySuccessResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GatewayErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GatewayErrorResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GatewayErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/OptIn/opt-out": {
+      "patch": {
+        "tags": [
+          "OptIn"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OptOutRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OptOutRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OptOutRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GatewaySuccessResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GatewayErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GatewayErrorResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GatewayErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CampaignMigrateRequest": {
+        "required": [
+          "consumerId",
+          "ean",
+          "newCampaignId"
+        ],
+        "type": "object",
+        "properties": {
+          "consumerId": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "ean": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "newCampaignId": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "indication": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "type": "string",
+            "nullable": true
+          },
+          "idempotencyKey": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GatewayErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "nullable": true
+          },
+          "details": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "occurredAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GatewaySuccessResponse": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "idempotencyKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "processedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OptOutRequest": {
+        "required": [
+          "optOutType",
+          "origin"
+        ],
+        "type": "object",
+        "properties": {
+          "consumerId": {
+            "type": "string",
+            "nullable": true
+          },
+          "optOutType": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "channel": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "idempotencyKey": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "ApiKey": {
+        "type": "apiKey",
+        "description": "API Key para acesso ao gateway.",
+        "name": "X-Api-Key",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "ApiKey": [ ]
+    }
+  ]
+}

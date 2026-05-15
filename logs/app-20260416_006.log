@@ -1,0 +1,77 @@
+2026-04-16 16:11:04.310 -03:00 [INF] InterplayersGateway iniciado com sucesso.
+2026-04-16 16:11:04.464 -03:00 [INF] Now listening on: https://localhost:7121
+2026-04-16 16:11:04.468 -03:00 [INF] Now listening on: http://localhost:5113
+2026-04-16 16:11:04.522 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-16 16:11:04.524 -03:00 [INF] Hosting environment: Development
+2026-04-16 16:11:04.527 -03:00 [INF] Content root path: C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA
+2026-04-16 16:11:05.612 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+2026-04-16 16:11:05.920 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 309.9628ms
+2026-04-16 16:11:05.984 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-16 16:11:05.999 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - 200 16571 application/javascript; charset=utf-8 14.6856ms
+2026-04-16 16:11:06.223 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - null null
+2026-04-16 16:11:06.297 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - 200 null text/javascript; charset=UTF-8 73.3715ms
+2026-04-16 16:11:06.452 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+2026-04-16 16:11:06.482 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 29.4162ms
+2026-04-16 16:12:04.018 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+2026-04-16 16:12:04.043 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 24.1981ms
+2026-04-16 16:12:04.107 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-16 16:12:04.117 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - 200 16571 application/javascript; charset=utf-8 9.7512ms
+2026-04-16 16:12:04.439 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - null null
+2026-04-16 16:12:04.451 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.9871ms
+2026-04-16 16:12:04.609 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+2026-04-16 16:12:04.628 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.5136ms
+2026-04-16 16:12:15.763 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/Campaign/migrate - application/json 176
+2026-04-16 16:12:15.776 -03:00 [INF] CORS policy execution successful.
+2026-04-16 16:12:15.782 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.CampaignController.Migrate (InterplayersGateway)'
+2026-04-16 16:12:15.816 -03:00 [INF] Route matched with {action = "Migrate", controller = "Campaign"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Migrate(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.CampaignMigrateRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.CampaignController (InterplayersGateway).
+2026-04-16 16:12:15.868 -03:00 [INF] Migrando campanha. Consumer=10798320057 Ean=7896015523398 NewCampaign=9 Indication=Indicação A
+2026-04-16 16:12:15.879 -03:00 [INF] Token Interplayers expirado ou ausente. Renovando...
+2026-04-16 16:12:15.891 -03:00 [INF] Start processing HTTP request POST https://interplayersdevb2c.b2clogin.com/interplayersdevb2c.onmicrosoft.com/B2C_1_Loyalty/oauth2/v2.0/token
+2026-04-16 16:12:15.894 -03:00 [INF] Sending HTTP request POST https://interplayersdevb2c.b2clogin.com/interplayersdevb2c.onmicrosoft.com/B2C_1_Loyalty/oauth2/v2.0/token
+2026-04-16 16:12:17.224 -03:00 [INF] Received HTTP response headers after 1324.6293ms - 200
+2026-04-16 16:12:17.228 -03:00 [INF] End processing HTTP request after 1339.492ms - 200
+2026-04-16 16:12:17.242 -03:00 [INF] Token Interplayers renovado. Válido por 3300s.
+2026-04-16 16:12:17.247 -03:00 [INF] Start processing HTTP request PATCH https://idp-api-gtw.azure-api.net/external-loyalty-adhesion-pre/v2/Adhesion/administrators/057/consumers/10798320057/products/migrate-campaign
+2026-04-16 16:12:17.250 -03:00 [INF] Sending HTTP request PATCH https://idp-api-gtw.azure-api.net/external-loyalty-adhesion-pre/v2/Adhesion/administrators/057/consumers/10798320057/products/migrate-campaign
+2026-04-16 16:12:19.800 -03:00 [INF] Received HTTP response headers after 2547.3002ms - 404
+2026-04-16 16:12:19.802 -03:00 [INF] End processing HTTP request after 2555.2407ms - 404
+2026-04-16 16:12:19.831 -03:00 [INF] [AUDIT] Action=campaign_migrate Consumer=10798320057 Origin=WPP_FLOW Success=false StatusCode=404 IdempotencyKey=q9bD62pEru8U
+2026-04-16 16:12:19.846 -03:00 [WRN] Migração falhou. Status=404 Code=LA06 Desc=Consumidor não encontrado (LA06)
+2026-04-16 16:12:19.854 -03:00 [INF] Executing ObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewayErrorResponse'.
+2026-04-16 16:12:19.865 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.CampaignController.Migrate (InterplayersGateway) in 4040.9853ms
+2026-04-16 16:12:19.869 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.CampaignController.Migrate (InterplayersGateway)'
+2026-04-16 16:12:19.874 -03:00 [INF] HTTP PATCH /api/Campaign/migrate responded 404 in 4099.6534ms
+2026-04-16 16:12:19.879 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/Campaign/migrate - 404 null application/json; charset=utf-8 4115.5835ms
+2026-04-16 16:13:00.736 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/Campaign/migrate - application/json 176
+2026-04-16 16:13:00.743 -03:00 [INF] CORS policy execution successful.
+2026-04-16 16:13:00.745 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.CampaignController.Migrate (InterplayersGateway)'
+2026-04-16 16:13:00.748 -03:00 [INF] Route matched with {action = "Migrate", controller = "Campaign"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Migrate(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.CampaignMigrateRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.CampaignController (InterplayersGateway).
+2026-04-16 16:13:00.754 -03:00 [INF] Migrando campanha. Consumer=57105775487 Ean=7896015523398 NewCampaign=9 Indication=Indicação A
+2026-04-16 16:13:00.760 -03:00 [INF] Start processing HTTP request PATCH https://idp-api-gtw.azure-api.net/external-loyalty-adhesion-pre/v2/Adhesion/administrators/057/consumers/57105775487/products/migrate-campaign
+2026-04-16 16:13:00.763 -03:00 [INF] Sending HTTP request PATCH https://idp-api-gtw.azure-api.net/external-loyalty-adhesion-pre/v2/Adhesion/administrators/057/consumers/57105775487/products/migrate-campaign
+2026-04-16 16:13:01.234 -03:00 [INF] Received HTTP response headers after 467.8387ms - 404
+2026-04-16 16:13:01.236 -03:00 [INF] End processing HTTP request after 476.0188ms - 404
+2026-04-16 16:13:01.240 -03:00 [INF] [AUDIT] Action=campaign_migrate Consumer=57105775487 Origin=WPP_FLOW Success=false StatusCode=404 IdempotencyKey=q9bD62pEru8U
+2026-04-16 16:13:01.248 -03:00 [WRN] Migração falhou. Status=404 Code=LA06 Desc=Consumidor não encontrado (LA06)
+2026-04-16 16:13:01.252 -03:00 [INF] Executing ObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewayErrorResponse'.
+2026-04-16 16:13:01.256 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.CampaignController.Migrate (InterplayersGateway) in 503.7643ms
+2026-04-16 16:13:01.260 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.CampaignController.Migrate (InterplayersGateway)'
+2026-04-16 16:13:01.263 -03:00 [INF] HTTP PATCH /api/Campaign/migrate responded 404 in 519.5748ms
+2026-04-16 16:13:01.267 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/Campaign/migrate - 404 null application/json; charset=utf-8 531.2762ms
+2026-04-16 16:14:27.093 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/Campaign/migrate - application/json 174
+2026-04-16 16:14:27.102 -03:00 [INF] CORS policy execution successful.
+2026-04-16 16:14:27.104 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.CampaignController.Migrate (InterplayersGateway)'
+2026-04-16 16:14:27.107 -03:00 [INF] Route matched with {action = "Migrate", controller = "Campaign"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Migrate(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.CampaignMigrateRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.CampaignController (InterplayersGateway).
+2026-04-16 16:14:27.114 -03:00 [INF] Migrando campanha. Consumer=105775487 Ean=7896015523398 NewCampaign=9 Indication=Indicação A
+2026-04-16 16:14:27.120 -03:00 [INF] Start processing HTTP request PATCH https://idp-api-gtw.azure-api.net/external-loyalty-adhesion-pre/v2/Adhesion/administrators/057/consumers/105775487/products/migrate-campaign
+2026-04-16 16:14:27.124 -03:00 [INF] Sending HTTP request PATCH https://idp-api-gtw.azure-api.net/external-loyalty-adhesion-pre/v2/Adhesion/administrators/057/consumers/105775487/products/migrate-campaign
+2026-04-16 16:14:28.136 -03:00 [INF] Received HTTP response headers after 1008.974ms - 404
+2026-04-16 16:14:28.140 -03:00 [INF] End processing HTTP request after 1019.4265ms - 404
+2026-04-16 16:14:28.143 -03:00 [INF] [AUDIT] Action=campaign_migrate Consumer=105775487 Origin=WPP_FLOW Success=false StatusCode=404 IdempotencyKey=q9bD62pEru8U
+2026-04-16 16:14:28.150 -03:00 [WRN] Migração falhou. Status=404 Code=LA06 Desc=Consumidor não encontrado (LA06)
+2026-04-16 16:14:28.154 -03:00 [INF] Executing ObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewayErrorResponse'.
+2026-04-16 16:14:28.157 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.CampaignController.Migrate (InterplayersGateway) in 1045.898ms
+2026-04-16 16:14:28.160 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.CampaignController.Migrate (InterplayersGateway)'
+2026-04-16 16:14:28.162 -03:00 [INF] HTTP PATCH /api/Campaign/migrate responded 404 in 1060.4645ms
+2026-04-16 16:14:28.167 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/Campaign/migrate - 404 null application/json; charset=utf-8 1073.9637ms
+2026-04-16 17:24:25.233 -03:00 [INF] Iniciando InterplayersGateway...

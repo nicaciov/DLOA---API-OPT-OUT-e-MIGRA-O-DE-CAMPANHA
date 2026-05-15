@@ -1,0 +1,92 @@
+[
+  {
+    "ContainingType": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Controller.CampaignController",
+    "Method": "Migrate",
+    "RelativePath": "api/Campaign/migrate",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Models.Requests.CampaignMigrateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Models.Responses.GatewaySuccessResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Models.Responses.GatewayErrorResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Models.Responses.GatewayErrorResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Models.Responses.GatewayErrorResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 502
+      }
+    ]
+  },
+  {
+    "ContainingType": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Controller.OptInController",
+    "Method": "OptOut",
+    "RelativePath": "api/OptIn/opt-out",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Models.Requests.OptOutRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Models.Responses.GatewaySuccessResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Models.Responses.GatewayErrorResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Models.Responses.GatewayErrorResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Models.Responses.GatewayErrorResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 502
+      }
+    ]
+  }
+]
