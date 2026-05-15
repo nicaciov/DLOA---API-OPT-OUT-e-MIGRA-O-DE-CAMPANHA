@@ -1,0 +1,66 @@
+2026-04-28 17:16:00.714 -03:00 [INF] InterplayersGateway iniciado com sucesso.
+2026-04-28 17:16:00.856 -03:00 [INF] Now listening on: https://localhost:7121
+2026-04-28 17:16:00.861 -03:00 [INF] Now listening on: http://localhost:5113
+2026-04-28 17:16:00.908 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-28 17:16:00.910 -03:00 [INF] Hosting environment: Development
+2026-04-28 17:16:00.912 -03:00 [INF] Content root path: C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA
+2026-04-28 17:16:01.573 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+2026-04-28 17:16:01.896 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 322.8937ms
+2026-04-28 17:16:01.982 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-28 17:16:02.044 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - 200 16571 application/javascript; charset=utf-8 62.7728ms
+2026-04-28 17:16:02.316 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - null null
+2026-04-28 17:16:02.363 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.7621ms
+2026-04-28 17:16:02.587 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+2026-04-28 17:16:02.627 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 40.0751ms
+2026-04-28 17:16:22.758 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 151
+2026-04-28 17:16:22.779 -03:00 [INF] CORS policy execution successful.
+2026-04-28 17:16:22.783 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-04-28 17:16:22.823 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-04-28 17:16:22.876 -03:00 [INF] Token Interplayers expirado ou ausente. Renovando...
+2026-04-28 17:16:22.887 -03:00 [INF] Start processing HTTP request POST https://interplayersdevb2c.b2clogin.com/interplayersdevb2c.onmicrosoft.com/B2C_1_Loyalty/oauth2/v2.0/token
+2026-04-28 17:16:22.893 -03:00 [INF] Sending HTTP request POST https://interplayersdevb2c.b2clogin.com/interplayersdevb2c.onmicrosoft.com/B2C_1_Loyalty/oauth2/v2.0/token
+2026-04-28 17:16:24.205 -03:00 [INF] Received HTTP response headers after 1305.3974ms - 200
+2026-04-28 17:16:24.209 -03:00 [INF] End processing HTTP request after 1325.6124ms - 200
+2026-04-28 17:16:24.229 -03:00 [INF] Token Interplayers renovado. Válido por 3300s.
+2026-04-28 17:16:24.232 -03:00 [INF] Start processing HTTP request GET https://idp-api-gtw.azure-api.net/external-loyalty-registration-pre/v2/Registrations/administrators/057/consumers/external/25057
+2026-04-28 17:16:24.236 -03:00 [INF] Sending HTTP request GET https://idp-api-gtw.azure-api.net/external-loyalty-registration-pre/v2/Registrations/administrators/057/consumers/external/25057
+2026-04-28 17:16:24.801 -03:00 [INF] Received HTTP response headers after 562.0072ms - 404
+2026-04-28 17:16:24.804 -03:00 [INF] End processing HTTP request after 571.5397ms - 404
+2026-04-28 17:16:24.807 -03:00 [WRN] Falha ao buscar opt-ins atuais. Status=404
+2026-04-28 17:16:24.808 -03:00 [WRN] Consumidor 25057 não encontrado ou sem dados de preferência.
+2026-04-28 17:16:24.814 -03:00 [INF] Executing ObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewayErrorResponse'.
+2026-04-28 17:16:24.827 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 1997.0354ms
+2026-04-28 17:16:24.830 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-04-28 17:16:24.834 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 404 in 2057.7777ms
+2026-04-28 17:16:24.838 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 404 null application/json; charset=utf-8 2080.4055ms
+2026-04-28 17:25:03.219 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 154
+2026-04-28 17:25:03.229 -03:00 [INF] CORS policy execution successful.
+2026-04-28 17:25:03.231 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-04-28 17:25:03.233 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-04-28 17:25:03.240 -03:00 [INF] Start processing HTTP request GET https://idp-api-gtw.azure-api.net/external-loyalty-registration-pre/v2/Registrations/administrators/057/consumers/external/75712547
+2026-04-28 17:25:03.243 -03:00 [INF] Sending HTTP request GET https://idp-api-gtw.azure-api.net/external-loyalty-registration-pre/v2/Registrations/administrators/057/consumers/external/75712547
+2026-04-28 17:25:03.803 -03:00 [INF] Received HTTP response headers after 557.8208ms - 404
+2026-04-28 17:25:03.806 -03:00 [INF] End processing HTTP request after 566.4841ms - 404
+2026-04-28 17:25:03.809 -03:00 [WRN] Falha ao buscar opt-ins atuais. Status=404
+2026-04-28 17:25:03.811 -03:00 [WRN] Consumidor 75712547 não encontrado ou sem dados de preferência.
+2026-04-28 17:25:03.813 -03:00 [INF] Executing ObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewayErrorResponse'.
+2026-04-28 17:25:03.816 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 578.689ms
+2026-04-28 17:25:03.819 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-04-28 17:25:03.821 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 404 in 593.0667ms
+2026-04-28 17:25:03.826 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 404 null application/json; charset=utf-8 606.5608ms
+2026-04-28 17:25:07.538 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 154
+2026-04-28 17:25:07.545 -03:00 [INF] CORS policy execution successful.
+2026-04-28 17:25:07.548 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-04-28 17:25:07.550 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-04-28 17:25:07.555 -03:00 [INF] Start processing HTTP request GET https://idp-api-gtw.azure-api.net/external-loyalty-registration-pre/v2/Registrations/administrators/057/consumers/external/75712547
+2026-04-28 17:25:07.558 -03:00 [INF] Sending HTTP request GET https://idp-api-gtw.azure-api.net/external-loyalty-registration-pre/v2/Registrations/administrators/057/consumers/external/75712547
+2026-04-28 17:25:07.731 -03:00 [INF] Received HTTP response headers after 171.0801ms - 404
+2026-04-28 17:25:07.734 -03:00 [INF] End processing HTTP request after 178.1416ms - 404
+2026-04-28 17:25:07.736 -03:00 [WRN] Falha ao buscar opt-ins atuais. Status=404
+2026-04-28 17:25:07.738 -03:00 [WRN] Consumidor 75712547 não encontrado ou sem dados de preferência.
+2026-04-28 17:25:07.740 -03:00 [INF] Executing ObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewayErrorResponse'.
+2026-04-28 17:25:07.742 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 188.0583ms
+2026-04-28 17:25:07.745 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-04-28 17:25:07.747 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 404 in 202.2610ms
+2026-04-28 17:25:07.750 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 404 null application/json; charset=utf-8 212.2431ms
+2026-04-28 17:26:32.607 -03:00 [INF] Iniciando InterplayersGateway...

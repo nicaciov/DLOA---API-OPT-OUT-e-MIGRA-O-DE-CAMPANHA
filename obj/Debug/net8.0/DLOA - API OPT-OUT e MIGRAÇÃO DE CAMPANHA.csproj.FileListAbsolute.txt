@@ -1,0 +1,55 @@
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\appsettings.json
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\InterplayersGateway.staticwebassets.endpoints.json
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\InterplayersGateway.exe
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\InterplayersGateway.deps.json
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\InterplayersGateway.runtimeconfig.json
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\InterplayersGateway.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\InterplayersGateway.pdb
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Serilog.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA.csproj.AssemblyReference.cache
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA.AssemblyInfoInputs.cache
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA.AssemblyInfo.cs
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA.csproj.CoreCompileInputs.cache
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\InterplayersGateway.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\InterplayersGateway.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\scopedcss\bundle\InterplayersGateway.styles.css
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\DLOA - A.D3FF3F3B.Up2Date
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\InterplayersGateway.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\refint\InterplayersGateway.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\InterplayersGateway.pdb
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA.genruntimeconfig.cache
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\ref\InterplayersGateway.dll
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA.sourcelink.json
