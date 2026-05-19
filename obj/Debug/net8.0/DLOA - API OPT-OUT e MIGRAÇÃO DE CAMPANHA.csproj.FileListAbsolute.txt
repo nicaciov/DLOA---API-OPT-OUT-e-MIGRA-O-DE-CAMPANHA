@@ -36,6 +36,7 @@ C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇ
 C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA.csproj.CoreCompileInputs.cache
 C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\InterplayersGateway.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\InterplayersGateway.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA.sourcelink.json
 C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
@@ -52,4 +53,3 @@ C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇ
 C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\InterplayersGateway.pdb
 C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA.genruntimeconfig.cache
 C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\ref\InterplayersGateway.dll
-C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA\obj\Debug\net8.0\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA.sourcelink.json

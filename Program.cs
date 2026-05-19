@@ -60,8 +60,8 @@ try
                           "**Tarefa 2:** Migração de campanha para segmentação de pacientes PDV",
             Contact = new OpenApiContact
             {
-                Name = "Nicacio INC",
-                Email = "dev@nicacio.com.br"
+                Name = "Em caso de dúvidas, entre em contato com: vitor.nicacio@dloa.com.br",
+                Email = "vitor.nicacio@dloa.com.br"
             }
         });
 
