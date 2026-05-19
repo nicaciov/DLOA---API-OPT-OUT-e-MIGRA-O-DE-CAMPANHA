@@ -1,0 +1,392 @@
+2026-05-19 14:44:45.171 -03:00 [INF] InterplayersGateway iniciado com sucesso.
+2026-05-19 14:44:45.334 -03:00 [INF] Now listening on: https://localhost:7121
+2026-05-19 14:44:45.339 -03:00 [INF] Now listening on: http://localhost:5113
+2026-05-19 14:44:45.488 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-19 14:44:45.490 -03:00 [INF] Hosting environment: Development
+2026-05-19 14:44:45.492 -03:00 [INF] Content root path: C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA
+2026-05-19 14:44:45.952 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+2026-05-19 14:44:46.193 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 240.6186ms
+2026-05-19 14:44:46.243 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-19 14:44:46.260 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - 200 14991 application/javascript; charset=utf-8 16.9789ms
+2026-05-19 14:44:46.665 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - null null
+2026-05-19 14:44:46.694 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.8699ms
+2026-05-19 14:44:46.777 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+2026-05-19 14:44:46.798 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.2039ms
+2026-05-19 14:45:38.457 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 142
+2026-05-19 14:45:38.473 -03:00 [INF] CORS policy execution successful.
+2026-05-19 14:45:38.477 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:45:38.505 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 14:45:38.547 -03:00 [INF] Enviando opt-out para Interplayers. Consumer=57103155742 Type=channel_opt_out Channel=whatsapp
+2026-05-19 14:45:38.557 -03:00 [INF] Token Interplayers expirado ou ausente. Renovando...
+2026-05-19 14:45:38.564 -03:00 [INF] Start processing HTTP request POST https://account.iplayers.com.br/interplayersb2c.onmicrosoft.com/B2C_1_Loyalty/oauth2/v2.0/token
+2026-05-19 14:45:38.568 -03:00 [INF] Sending HTTP request POST https://account.iplayers.com.br/interplayersb2c.onmicrosoft.com/B2C_1_Loyalty/oauth2/v2.0/token
+2026-05-19 14:45:39.811 -03:00 [INF] Received HTTP response headers after 1240.0861ms - 200
+2026-05-19 14:45:39.813 -03:00 [INF] End processing HTTP request after 1252.2317ms - 200
+2026-05-19 14:45:39.826 -03:00 [INF] Token Interplayers renovado. Válido por 3300s.
+2026-05-19 14:45:39.831 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║              REQUISIÇÃO → INTERPLAYERS               ║
+╚══════════════════════════════════════════════════════╝
+Método  : PATCH
+URL     : https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/57103155742/opt-ins
+Headers :
+  Authorization : Bearer eyJhbGciOiJSUzI1NiIs...rV9ntcbYrQ
+  Content-Type  : application/json
+Body    :
+{
+  "whatsApp": "N"
+}
+
+CURL equivalente:
+curl -X PATCH "https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/57103155742/opt-ins" \
+  -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhNjQ4NTUxNi0xOWZhLTQ3NjctYWNmMS03ZjhhMGQ4ZmE4YTMiLCJpc3MiOiJodHRwczovL2FjY291bnQuaXBsYXllcnMuY29tLmJyLzI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZC92Mi4wLyIsImV4cCI6MTc3OTIxNjMzOSwibmJmIjoxNzc5MjEyNzM5LCJ0ZnAiOiJCMkNfMV9Mb3lhbHR5Iiwic2NwIjoiTG95YWx0eS5SZWFkIEFwcC5BZG1pbmlzdHJhdG9yLjU3IExveWFsdHkuQ29uc3VtZXJSZWdpc3RyYXRpb24uV3JpdGUgU3lzdGVtSWQuQURNMDQzOTQwNjE4MDFMIExveWFsdHkuV3JpdGUgTG95YWx0eS5Db25zdW1lckFkaGVzaW9uLldyaXRlIiwiYXpwYWNyIjoiMSIsInN1YiI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsIm9pZCI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsInRpZCI6IjI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZCIsInZlciI6IjIuMCIsImF6cCI6IjAxNmNjMjMxLTY2YzgtNGZmMC1iYjZiLWQ0ZGQ3YWNlOTcwZCIsImlhdCI6MTc3OTIxMjczOX0.jKbwPLod17xRHkSHlGoxNWwYcETSZwEbejwh8Gkh7IlWVm_gEZ0ArMIL3CjFsObqCCPvKzWXS_CyDNADLO3gWkBX4f9Ef7CNFEs_hVLtXQ0-_bCm4kqtfLtlUyb5ENjBrQjY6BfAaz7FplXahgpQJosQyIgsc3-JbK7eEA42Ym3xZol5gyF95w3eaUs6rf9Q7TAsRq9CC91gZhfIPiSSIFocE4Z4DcJyVIazlv8Mw4Ct9x91EwenEpqGpYrgydO34WnVWSTP2m-k1gpZFePnQtP5fqbAnvwIOUBNVhdBFHPWz_m_IuvbYNrTfC-RgHZK_6xu7NGa3xsxrV9ntcbYrQ" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "whatsApp": "N"
+}'
+2026-05-19 14:45:39.835 -03:00 [INF] Start processing HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/57103155742/opt-ins
+2026-05-19 14:45:39.837 -03:00 [INF] Sending HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/57103155742/opt-ins
+2026-05-19 14:45:41.025 -03:00 [INF] Received HTTP response headers after 1186.4471ms - 404
+2026-05-19 14:45:41.027 -03:00 [INF] End processing HTTP request after 1191.4773ms - 404
+2026-05-19 14:45:41.030 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║             RESPOSTA ← INTERPLAYERS                  ║
+╚══════════════════════════════════════════════════════╝
+Status  : 404 Not Found
+Headers :
+  Transfer-Encoding: chunked
+  Request-Context: appId=cid-v1:ff420140-14a7-4478-beba-e65c3c490435
+  Date: Tue, 19 May 2026 17:45:40 GMT
+Body    :
+{
+  "Data": {
+    "error": "LR52",
+    "errorDescription": "Erro no Payload do Opt-ins (LR52)"
+  }
+}
+2026-05-19 14:45:41.048 -03:00 [INF] [AUDIT] Action=channel_opt_out Consumer=57103155742 Origin=API Success=false StatusCode=404 IdempotencyKey=ABC123
+2026-05-19 14:45:41.058 -03:00 [WRN] Interplayers retornou erro. Status=404 Code=LR52 Desc=Erro no Payload do Opt-ins (LR52)
+2026-05-19 14:45:41.065 -03:00 [INF] Executing ObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewayErrorResponse'.
+2026-05-19 14:45:41.075 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 2562.0175ms
+2026-05-19 14:45:41.078 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:45:41.081 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 404 in 2610.8563ms
+2026-05-19 14:45:41.084 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 404 null application/json; charset=utf-8 2627.0974ms
+2026-05-19 14:45:50.280 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 140
+2026-05-19 14:45:50.286 -03:00 [INF] CORS policy execution successful.
+2026-05-19 14:45:50.287 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:45:50.289 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 14:45:50.294 -03:00 [INF] Enviando opt-out para Interplayers. Consumer=103155742 Type=channel_opt_out Channel=whatsapp
+2026-05-19 14:45:50.296 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║              REQUISIÇÃO → INTERPLAYERS               ║
+╚══════════════════════════════════════════════════════╝
+Método  : PATCH
+URL     : https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/103155742/opt-ins
+Headers :
+  Authorization : Bearer eyJhbGciOiJSUzI1NiIs...rV9ntcbYrQ
+  Content-Type  : application/json
+Body    :
+{
+  "whatsApp": "N"
+}
+
+CURL equivalente:
+curl -X PATCH "https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/103155742/opt-ins" \
+  -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhNjQ4NTUxNi0xOWZhLTQ3NjctYWNmMS03ZjhhMGQ4ZmE4YTMiLCJpc3MiOiJodHRwczovL2FjY291bnQuaXBsYXllcnMuY29tLmJyLzI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZC92Mi4wLyIsImV4cCI6MTc3OTIxNjMzOSwibmJmIjoxNzc5MjEyNzM5LCJ0ZnAiOiJCMkNfMV9Mb3lhbHR5Iiwic2NwIjoiTG95YWx0eS5SZWFkIEFwcC5BZG1pbmlzdHJhdG9yLjU3IExveWFsdHkuQ29uc3VtZXJSZWdpc3RyYXRpb24uV3JpdGUgU3lzdGVtSWQuQURNMDQzOTQwNjE4MDFMIExveWFsdHkuV3JpdGUgTG95YWx0eS5Db25zdW1lckFkaGVzaW9uLldyaXRlIiwiYXpwYWNyIjoiMSIsInN1YiI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsIm9pZCI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsInRpZCI6IjI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZCIsInZlciI6IjIuMCIsImF6cCI6IjAxNmNjMjMxLTY2YzgtNGZmMC1iYjZiLWQ0ZGQ3YWNlOTcwZCIsImlhdCI6MTc3OTIxMjczOX0.jKbwPLod17xRHkSHlGoxNWwYcETSZwEbejwh8Gkh7IlWVm_gEZ0ArMIL3CjFsObqCCPvKzWXS_CyDNADLO3gWkBX4f9Ef7CNFEs_hVLtXQ0-_bCm4kqtfLtlUyb5ENjBrQjY6BfAaz7FplXahgpQJosQyIgsc3-JbK7eEA42Ym3xZol5gyF95w3eaUs6rf9Q7TAsRq9CC91gZhfIPiSSIFocE4Z4DcJyVIazlv8Mw4Ct9x91EwenEpqGpYrgydO34WnVWSTP2m-k1gpZFePnQtP5fqbAnvwIOUBNVhdBFHPWz_m_IuvbYNrTfC-RgHZK_6xu7NGa3xsxrV9ntcbYrQ" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "whatsApp": "N"
+}'
+2026-05-19 14:45:50.301 -03:00 [INF] Start processing HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/103155742/opt-ins
+2026-05-19 14:45:50.302 -03:00 [INF] Sending HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/103155742/opt-ins
+2026-05-19 14:45:50.677 -03:00 [INF] Received HTTP response headers after 373.9255ms - 404
+2026-05-19 14:45:50.680 -03:00 [INF] End processing HTTP request after 379.2217ms - 404
+2026-05-19 14:45:50.682 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║             RESPOSTA ← INTERPLAYERS                  ║
+╚══════════════════════════════════════════════════════╝
+Status  : 404 Not Found
+Headers :
+  Transfer-Encoding: chunked
+  Request-Context: appId=cid-v1:ff420140-14a7-4478-beba-e65c3c490435
+  Date: Tue, 19 May 2026 17:45:49 GMT
+Body    :
+{
+  "Data": {
+    "error": "LR52",
+    "errorDescription": "Erro no Payload do Opt-ins (LR52)"
+  }
+}
+2026-05-19 14:45:50.686 -03:00 [INF] [AUDIT] Action=channel_opt_out Consumer=103155742 Origin=API Success=false StatusCode=404 IdempotencyKey=ABC123
+2026-05-19 14:45:50.691 -03:00 [WRN] Interplayers retornou erro. Status=404 Code=LR52 Desc=Erro no Payload do Opt-ins (LR52)
+2026-05-19 14:45:50.695 -03:00 [INF] Executing ObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewayErrorResponse'.
+2026-05-19 14:45:50.697 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 404.844ms
+2026-05-19 14:45:50.699 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:45:50.700 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 404 in 415.1001ms
+2026-05-19 14:45:50.703 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 404 null application/json; charset=utf-8 422.9594ms
+2026-05-19 14:45:56.359 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 142
+2026-05-19 14:45:56.363 -03:00 [INF] CORS policy execution successful.
+2026-05-19 14:45:56.365 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:45:56.366 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 14:45:56.371 -03:00 [INF] Enviando opt-out para Interplayers. Consumer=10315574257 Type=channel_opt_out Channel=whatsapp
+2026-05-19 14:45:56.373 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║              REQUISIÇÃO → INTERPLAYERS               ║
+╚══════════════════════════════════════════════════════╝
+Método  : PATCH
+URL     : https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/10315574257/opt-ins
+Headers :
+  Authorization : Bearer eyJhbGciOiJSUzI1NiIs...rV9ntcbYrQ
+  Content-Type  : application/json
+Body    :
+{
+  "whatsApp": "N"
+}
+
+CURL equivalente:
+curl -X PATCH "https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/10315574257/opt-ins" \
+  -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhNjQ4NTUxNi0xOWZhLTQ3NjctYWNmMS03ZjhhMGQ4ZmE4YTMiLCJpc3MiOiJodHRwczovL2FjY291bnQuaXBsYXllcnMuY29tLmJyLzI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZC92Mi4wLyIsImV4cCI6MTc3OTIxNjMzOSwibmJmIjoxNzc5MjEyNzM5LCJ0ZnAiOiJCMkNfMV9Mb3lhbHR5Iiwic2NwIjoiTG95YWx0eS5SZWFkIEFwcC5BZG1pbmlzdHJhdG9yLjU3IExveWFsdHkuQ29uc3VtZXJSZWdpc3RyYXRpb24uV3JpdGUgU3lzdGVtSWQuQURNMDQzOTQwNjE4MDFMIExveWFsdHkuV3JpdGUgTG95YWx0eS5Db25zdW1lckFkaGVzaW9uLldyaXRlIiwiYXpwYWNyIjoiMSIsInN1YiI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsIm9pZCI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsInRpZCI6IjI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZCIsInZlciI6IjIuMCIsImF6cCI6IjAxNmNjMjMxLTY2YzgtNGZmMC1iYjZiLWQ0ZGQ3YWNlOTcwZCIsImlhdCI6MTc3OTIxMjczOX0.jKbwPLod17xRHkSHlGoxNWwYcETSZwEbejwh8Gkh7IlWVm_gEZ0ArMIL3CjFsObqCCPvKzWXS_CyDNADLO3gWkBX4f9Ef7CNFEs_hVLtXQ0-_bCm4kqtfLtlUyb5ENjBrQjY6BfAaz7FplXahgpQJosQyIgsc3-JbK7eEA42Ym3xZol5gyF95w3eaUs6rf9Q7TAsRq9CC91gZhfIPiSSIFocE4Z4DcJyVIazlv8Mw4Ct9x91EwenEpqGpYrgydO34WnVWSTP2m-k1gpZFePnQtP5fqbAnvwIOUBNVhdBFHPWz_m_IuvbYNrTfC-RgHZK_6xu7NGa3xsxrV9ntcbYrQ" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "whatsApp": "N"
+}'
+2026-05-19 14:45:56.377 -03:00 [INF] Start processing HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/10315574257/opt-ins
+2026-05-19 14:45:56.379 -03:00 [INF] Sending HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/10315574257/opt-ins
+2026-05-19 14:45:56.757 -03:00 [INF] Received HTTP response headers after 376.8927ms - 404
+2026-05-19 14:45:56.759 -03:00 [INF] End processing HTTP request after 382.2737ms - 404
+2026-05-19 14:45:56.761 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║             RESPOSTA ← INTERPLAYERS                  ║
+╚══════════════════════════════════════════════════════╝
+Status  : 404 Not Found
+Headers :
+  Transfer-Encoding: chunked
+  Request-Context: appId=cid-v1:ff420140-14a7-4478-beba-e65c3c490435
+  Date: Tue, 19 May 2026 17:45:55 GMT
+Body    :
+{
+  "Data": {
+    "error": "LR52",
+    "errorDescription": "Erro no Payload do Opt-ins (LR52)"
+  }
+}
+2026-05-19 14:45:56.763 -03:00 [INF] [AUDIT] Action=channel_opt_out Consumer=10315574257 Origin=API Success=false StatusCode=404 IdempotencyKey=ABC123
+2026-05-19 14:45:56.768 -03:00 [WRN] Interplayers retornou erro. Status=404 Code=LR52 Desc=Erro no Payload do Opt-ins (LR52)
+2026-05-19 14:45:56.770 -03:00 [INF] Executing ObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewayErrorResponse'.
+2026-05-19 14:45:56.773 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 403.0301ms
+2026-05-19 14:45:56.775 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:45:56.776 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 404 in 413.6671ms
+2026-05-19 14:45:56.779 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 404 null application/json; charset=utf-8 419.9045ms
+2026-05-19 14:46:14.340 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 140
+2026-05-19 14:46:14.350 -03:00 [INF] CORS policy execution successful.
+2026-05-19 14:46:14.351 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:46:14.352 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 14:46:14.356 -03:00 [INF] Enviando opt-out para Interplayers. Consumer=103155742 Type=channel_opt_out Channel=whatsapp
+2026-05-19 14:46:14.359 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║              REQUISIÇÃO → INTERPLAYERS               ║
+╚══════════════════════════════════════════════════════╝
+Método  : PATCH
+URL     : https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/103155742/opt-ins
+Headers :
+  Authorization : Bearer eyJhbGciOiJSUzI1NiIs...rV9ntcbYrQ
+  Content-Type  : application/json
+Body    :
+{
+  "whatsApp": "N"
+}
+
+CURL equivalente:
+curl -X PATCH "https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/103155742/opt-ins" \
+  -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhNjQ4NTUxNi0xOWZhLTQ3NjctYWNmMS03ZjhhMGQ4ZmE4YTMiLCJpc3MiOiJodHRwczovL2FjY291bnQuaXBsYXllcnMuY29tLmJyLzI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZC92Mi4wLyIsImV4cCI6MTc3OTIxNjMzOSwibmJmIjoxNzc5MjEyNzM5LCJ0ZnAiOiJCMkNfMV9Mb3lhbHR5Iiwic2NwIjoiTG95YWx0eS5SZWFkIEFwcC5BZG1pbmlzdHJhdG9yLjU3IExveWFsdHkuQ29uc3VtZXJSZWdpc3RyYXRpb24uV3JpdGUgU3lzdGVtSWQuQURNMDQzOTQwNjE4MDFMIExveWFsdHkuV3JpdGUgTG95YWx0eS5Db25zdW1lckFkaGVzaW9uLldyaXRlIiwiYXpwYWNyIjoiMSIsInN1YiI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsIm9pZCI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsInRpZCI6IjI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZCIsInZlciI6IjIuMCIsImF6cCI6IjAxNmNjMjMxLTY2YzgtNGZmMC1iYjZiLWQ0ZGQ3YWNlOTcwZCIsImlhdCI6MTc3OTIxMjczOX0.jKbwPLod17xRHkSHlGoxNWwYcETSZwEbejwh8Gkh7IlWVm_gEZ0ArMIL3CjFsObqCCPvKzWXS_CyDNADLO3gWkBX4f9Ef7CNFEs_hVLtXQ0-_bCm4kqtfLtlUyb5ENjBrQjY6BfAaz7FplXahgpQJosQyIgsc3-JbK7eEA42Ym3xZol5gyF95w3eaUs6rf9Q7TAsRq9CC91gZhfIPiSSIFocE4Z4DcJyVIazlv8Mw4Ct9x91EwenEpqGpYrgydO34WnVWSTP2m-k1gpZFePnQtP5fqbAnvwIOUBNVhdBFHPWz_m_IuvbYNrTfC-RgHZK_6xu7NGa3xsxrV9ntcbYrQ" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "whatsApp": "N"
+}'
+2026-05-19 14:46:14.362 -03:00 [INF] Start processing HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/103155742/opt-ins
+2026-05-19 14:46:14.364 -03:00 [INF] Sending HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/103155742/opt-ins
+2026-05-19 14:46:14.739 -03:00 [INF] Received HTTP response headers after 373.4406ms - 404
+2026-05-19 14:46:14.741 -03:00 [INF] End processing HTTP request after 378.9345ms - 404
+2026-05-19 14:46:14.743 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║             RESPOSTA ← INTERPLAYERS                  ║
+╚══════════════════════════════════════════════════════╝
+Status  : 404 Not Found
+Headers :
+  Transfer-Encoding: chunked
+  Request-Context: appId=cid-v1:ff420140-14a7-4478-beba-e65c3c490435
+  Date: Tue, 19 May 2026 17:46:13 GMT
+Body    :
+{
+  "Data": {
+    "error": "LR52",
+    "errorDescription": "Erro no Payload do Opt-ins (LR52)"
+  }
+}
+2026-05-19 14:46:14.745 -03:00 [INF] [AUDIT] Action=channel_opt_out Consumer=103155742 Origin=API Success=false StatusCode=404 IdempotencyKey=ABC123
+2026-05-19 14:46:14.748 -03:00 [WRN] Interplayers retornou erro. Status=404 Code=LR52 Desc=Erro no Payload do Opt-ins (LR52)
+2026-05-19 14:46:14.750 -03:00 [INF] Executing ObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewayErrorResponse'.
+2026-05-19 14:46:14.752 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 396.7579ms
+2026-05-19 14:46:14.754 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:46:14.756 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 404 in 406.0778ms
+2026-05-19 14:46:14.759 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 404 null application/json; charset=utf-8 418.1268ms
+2026-05-19 14:46:18.712 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 139
+2026-05-19 14:46:18.716 -03:00 [INF] CORS policy execution successful.
+2026-05-19 14:46:18.717 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:46:18.718 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 14:46:18.722 -03:00 [INF] Enviando opt-out para Interplayers. Consumer=76115870 Type=channel_opt_out Channel=whatsapp
+2026-05-19 14:46:18.724 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║              REQUISIÇÃO → INTERPLAYERS               ║
+╚══════════════════════════════════════════════════════╝
+Método  : PATCH
+URL     : https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/76115870/opt-ins
+Headers :
+  Authorization : Bearer eyJhbGciOiJSUzI1NiIs...rV9ntcbYrQ
+  Content-Type  : application/json
+Body    :
+{
+  "whatsApp": "N"
+}
+
+CURL equivalente:
+curl -X PATCH "https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/76115870/opt-ins" \
+  -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhNjQ4NTUxNi0xOWZhLTQ3NjctYWNmMS03ZjhhMGQ4ZmE4YTMiLCJpc3MiOiJodHRwczovL2FjY291bnQuaXBsYXllcnMuY29tLmJyLzI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZC92Mi4wLyIsImV4cCI6MTc3OTIxNjMzOSwibmJmIjoxNzc5MjEyNzM5LCJ0ZnAiOiJCMkNfMV9Mb3lhbHR5Iiwic2NwIjoiTG95YWx0eS5SZWFkIEFwcC5BZG1pbmlzdHJhdG9yLjU3IExveWFsdHkuQ29uc3VtZXJSZWdpc3RyYXRpb24uV3JpdGUgU3lzdGVtSWQuQURNMDQzOTQwNjE4MDFMIExveWFsdHkuV3JpdGUgTG95YWx0eS5Db25zdW1lckFkaGVzaW9uLldyaXRlIiwiYXpwYWNyIjoiMSIsInN1YiI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsIm9pZCI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsInRpZCI6IjI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZCIsInZlciI6IjIuMCIsImF6cCI6IjAxNmNjMjMxLTY2YzgtNGZmMC1iYjZiLWQ0ZGQ3YWNlOTcwZCIsImlhdCI6MTc3OTIxMjczOX0.jKbwPLod17xRHkSHlGoxNWwYcETSZwEbejwh8Gkh7IlWVm_gEZ0ArMIL3CjFsObqCCPvKzWXS_CyDNADLO3gWkBX4f9Ef7CNFEs_hVLtXQ0-_bCm4kqtfLtlUyb5ENjBrQjY6BfAaz7FplXahgpQJosQyIgsc3-JbK7eEA42Ym3xZol5gyF95w3eaUs6rf9Q7TAsRq9CC91gZhfIPiSSIFocE4Z4DcJyVIazlv8Mw4Ct9x91EwenEpqGpYrgydO34WnVWSTP2m-k1gpZFePnQtP5fqbAnvwIOUBNVhdBFHPWz_m_IuvbYNrTfC-RgHZK_6xu7NGa3xsxrV9ntcbYrQ" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "whatsApp": "N"
+}'
+2026-05-19 14:46:18.727 -03:00 [INF] Start processing HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/76115870/opt-ins
+2026-05-19 14:46:18.729 -03:00 [INF] Sending HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/76115870/opt-ins
+2026-05-19 14:46:19.109 -03:00 [INF] Received HTTP response headers after 378.9693ms - 404
+2026-05-19 14:46:19.111 -03:00 [INF] End processing HTTP request after 383.5538ms - 404
+2026-05-19 14:46:19.113 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║             RESPOSTA ← INTERPLAYERS                  ║
+╚══════════════════════════════════════════════════════╝
+Status  : 404 Not Found
+Headers :
+  Transfer-Encoding: chunked
+  Request-Context: appId=cid-v1:ff420140-14a7-4478-beba-e65c3c490435
+  Date: Tue, 19 May 2026 17:46:17 GMT
+Body    :
+{
+  "Data": {
+    "error": "LR52",
+    "errorDescription": "Erro no Payload do Opt-ins (LR52)"
+  }
+}
+2026-05-19 14:46:19.115 -03:00 [INF] [AUDIT] Action=channel_opt_out Consumer=76115870 Origin=API Success=false StatusCode=404 IdempotencyKey=ABC123
+2026-05-19 14:46:19.118 -03:00 [WRN] Interplayers retornou erro. Status=404 Code=LR52 Desc=Erro no Payload do Opt-ins (LR52)
+2026-05-19 14:46:19.120 -03:00 [INF] Executing ObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewayErrorResponse'.
+2026-05-19 14:46:19.123 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 401.4644ms
+2026-05-19 14:46:19.125 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:46:19.126 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 404 in 410.1243ms
+2026-05-19 14:46:19.129 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 404 null application/json; charset=utf-8 416.5179ms
+2026-05-19 14:47:45.456 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 136
+2026-05-19 14:47:45.461 -03:00 [INF] CORS policy execution successful.
+2026-05-19 14:47:45.463 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:47:45.464 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 14:47:45.469 -03:00 [INF] Enviando opt-out para Interplayers. Consumer=25057 Type=channel_opt_out Channel=whatsapp
+2026-05-19 14:47:45.473 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║              REQUISIÇÃO → INTERPLAYERS               ║
+╚══════════════════════════════════════════════════════╝
+Método  : PATCH
+URL     : https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/25057/opt-ins
+Headers :
+  Authorization : Bearer eyJhbGciOiJSUzI1NiIs...rV9ntcbYrQ
+  Content-Type  : application/json
+Body    :
+{
+  "whatsApp": "N"
+}
+
+CURL equivalente:
+curl -X PATCH "https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/25057/opt-ins" \
+  -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhNjQ4NTUxNi0xOWZhLTQ3NjctYWNmMS03ZjhhMGQ4ZmE4YTMiLCJpc3MiOiJodHRwczovL2FjY291bnQuaXBsYXllcnMuY29tLmJyLzI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZC92Mi4wLyIsImV4cCI6MTc3OTIxNjMzOSwibmJmIjoxNzc5MjEyNzM5LCJ0ZnAiOiJCMkNfMV9Mb3lhbHR5Iiwic2NwIjoiTG95YWx0eS5SZWFkIEFwcC5BZG1pbmlzdHJhdG9yLjU3IExveWFsdHkuQ29uc3VtZXJSZWdpc3RyYXRpb24uV3JpdGUgU3lzdGVtSWQuQURNMDQzOTQwNjE4MDFMIExveWFsdHkuV3JpdGUgTG95YWx0eS5Db25zdW1lckFkaGVzaW9uLldyaXRlIiwiYXpwYWNyIjoiMSIsInN1YiI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsIm9pZCI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsInRpZCI6IjI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZCIsInZlciI6IjIuMCIsImF6cCI6IjAxNmNjMjMxLTY2YzgtNGZmMC1iYjZiLWQ0ZGQ3YWNlOTcwZCIsImlhdCI6MTc3OTIxMjczOX0.jKbwPLod17xRHkSHlGoxNWwYcETSZwEbejwh8Gkh7IlWVm_gEZ0ArMIL3CjFsObqCCPvKzWXS_CyDNADLO3gWkBX4f9Ef7CNFEs_hVLtXQ0-_bCm4kqtfLtlUyb5ENjBrQjY6BfAaz7FplXahgpQJosQyIgsc3-JbK7eEA42Ym3xZol5gyF95w3eaUs6rf9Q7TAsRq9CC91gZhfIPiSSIFocE4Z4DcJyVIazlv8Mw4Ct9x91EwenEpqGpYrgydO34WnVWSTP2m-k1gpZFePnQtP5fqbAnvwIOUBNVhdBFHPWz_m_IuvbYNrTfC-RgHZK_6xu7NGa3xsxrV9ntcbYrQ" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "whatsApp": "N"
+}'
+2026-05-19 14:47:45.477 -03:00 [INF] Start processing HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/25057/opt-ins
+2026-05-19 14:47:45.479 -03:00 [INF] Sending HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/25057/opt-ins
+2026-05-19 14:47:46.156 -03:00 [INF] Received HTTP response headers after 674.8523ms - 404
+2026-05-19 14:47:46.159 -03:00 [INF] End processing HTTP request after 681.8072ms - 404
+2026-05-19 14:47:46.162 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║             RESPOSTA ← INTERPLAYERS                  ║
+╚══════════════════════════════════════════════════════╝
+Status  : 404 Not Found
+Headers :
+  Transfer-Encoding: chunked
+  Request-Context: appId=cid-v1:ff420140-14a7-4478-beba-e65c3c490435
+  Date: Tue, 19 May 2026 17:47:44 GMT
+Body    :
+{
+  "Data": {
+    "error": "LR52",
+    "errorDescription": "Erro no Payload do Opt-ins (LR52)"
+  }
+}
+2026-05-19 14:47:46.165 -03:00 [INF] [AUDIT] Action=channel_opt_out Consumer=25057 Origin=API Success=false StatusCode=404 IdempotencyKey=ABC123
+2026-05-19 14:47:46.170 -03:00 [WRN] Interplayers retornou erro. Status=404 Code=LR52 Desc=Erro no Payload do Opt-ins (LR52)
+2026-05-19 14:47:46.172 -03:00 [INF] Executing ObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewayErrorResponse'.
+2026-05-19 14:47:46.175 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 706.9744ms
+2026-05-19 14:47:46.177 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:47:46.178 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 404 in 717.3458ms
+2026-05-19 14:47:46.181 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 404 null application/json; charset=utf-8 724.681ms
+2026-05-19 14:49:34.679 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 136
+2026-05-19 14:49:34.683 -03:00 [INF] CORS policy execution successful.
+2026-05-19 14:49:34.686 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:49:34.687 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 14:49:34.691 -03:00 [INF] Enviando opt-out para Interplayers. Consumer=25057 Type=channel_opt_out Channel=whatsapp
+2026-05-19 14:49:34.695 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║              REQUISIÇÃO → INTERPLAYERS               ║
+╚══════════════════════════════════════════════════════╝
+Método  : PATCH
+URL     : https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/25057/opt-ins
+Headers :
+  Authorization : Bearer eyJhbGciOiJSUzI1NiIs...rV9ntcbYrQ
+  Content-Type  : application/json
+Body    :
+{
+  "whatsApp": "N"
+}
+
+CURL equivalente:
+curl -X PATCH "https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/25057/opt-ins" \
+  -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhNjQ4NTUxNi0xOWZhLTQ3NjctYWNmMS03ZjhhMGQ4ZmE4YTMiLCJpc3MiOiJodHRwczovL2FjY291bnQuaXBsYXllcnMuY29tLmJyLzI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZC92Mi4wLyIsImV4cCI6MTc3OTIxNjMzOSwibmJmIjoxNzc5MjEyNzM5LCJ0ZnAiOiJCMkNfMV9Mb3lhbHR5Iiwic2NwIjoiTG95YWx0eS5SZWFkIEFwcC5BZG1pbmlzdHJhdG9yLjU3IExveWFsdHkuQ29uc3VtZXJSZWdpc3RyYXRpb24uV3JpdGUgU3lzdGVtSWQuQURNMDQzOTQwNjE4MDFMIExveWFsdHkuV3JpdGUgTG95YWx0eS5Db25zdW1lckFkaGVzaW9uLldyaXRlIiwiYXpwYWNyIjoiMSIsInN1YiI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsIm9pZCI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsInRpZCI6IjI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZCIsInZlciI6IjIuMCIsImF6cCI6IjAxNmNjMjMxLTY2YzgtNGZmMC1iYjZiLWQ0ZGQ3YWNlOTcwZCIsImlhdCI6MTc3OTIxMjczOX0.jKbwPLod17xRHkSHlGoxNWwYcETSZwEbejwh8Gkh7IlWVm_gEZ0ArMIL3CjFsObqCCPvKzWXS_CyDNADLO3gWkBX4f9Ef7CNFEs_hVLtXQ0-_bCm4kqtfLtlUyb5ENjBrQjY6BfAaz7FplXahgpQJosQyIgsc3-JbK7eEA42Ym3xZol5gyF95w3eaUs6rf9Q7TAsRq9CC91gZhfIPiSSIFocE4Z4DcJyVIazlv8Mw4Ct9x91EwenEpqGpYrgydO34WnVWSTP2m-k1gpZFePnQtP5fqbAnvwIOUBNVhdBFHPWz_m_IuvbYNrTfC-RgHZK_6xu7NGa3xsxrV9ntcbYrQ" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "whatsApp": "N"
+}'
+2026-05-19 14:49:34.700 -03:00 [INF] Start processing HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/25057/opt-ins
+2026-05-19 14:49:34.701 -03:00 [INF] Sending HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/057/consumers/external/25057/opt-ins
+2026-05-19 14:49:35.925 -03:00 [INF] Received HTTP response headers after 1221.8656ms - 404
+2026-05-19 14:49:35.928 -03:00 [INF] End processing HTTP request after 1227.7806ms - 404
+2026-05-19 14:49:35.930 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║             RESPOSTA ← INTERPLAYERS                  ║
+╚══════════════════════════════════════════════════════╝
+Status  : 404 Not Found
+Headers :
+  Transfer-Encoding: chunked
+  Request-Context: appId=cid-v1:ff420140-14a7-4478-beba-e65c3c490435
+  Date: Tue, 19 May 2026 17:49:34 GMT
+Body    :
+{
+  "Data": {
+    "error": "LR52",
+    "errorDescription": "Erro no Payload do Opt-ins (LR52)"
+  }
+}
+2026-05-19 14:49:35.933 -03:00 [INF] [AUDIT] Action=channel_opt_out Consumer=25057 Origin=API Success=false StatusCode=404 IdempotencyKey=ABC123
+2026-05-19 14:49:35.937 -03:00 [WRN] Interplayers retornou erro. Status=404 Code=LR52 Desc=Erro no Payload do Opt-ins (LR52)
+2026-05-19 14:49:35.939 -03:00 [INF] Executing ObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewayErrorResponse'.
+2026-05-19 14:49:35.941 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 1250.4593ms
+2026-05-19 14:49:35.943 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 14:49:35.944 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 404 in 1260.3921ms
+2026-05-19 14:49:35.947 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 404 null application/json; charset=utf-8 1267.9647ms
+2026-05-19 14:55:17.765 -03:00 [INF] Iniciando InterplayersGateway...

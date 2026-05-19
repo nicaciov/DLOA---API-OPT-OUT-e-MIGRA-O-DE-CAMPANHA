@@ -63,11 +63,17 @@ public class CampaignController : ControllerBase
                 StatusCode = 400
             });
 
-        // Idempotency-Key pode vir via header ou body
+        // Idempotency-Key: usa o do header/body se informado, senão gera automaticamente
         if (Request.Headers.TryGetValue("Idempotency-Key", out var headerKey) &&
-            string.IsNullOrEmpty(request.IdempotencyKey))
+            !string.IsNullOrEmpty(headerKey.ToString()))
         {
             request.IdempotencyKey = headerKey.ToString();
+        }
+
+        if (string.IsNullOrEmpty(request.IdempotencyKey))
+        {
+            request.IdempotencyKey = Guid.NewGuid().ToString("N");
+            _logger.LogInformation("IdempotencyKey gerado automaticamente: {Key}", request.IdempotencyKey);
         }
 
         var ip = HttpContext.Connection.RemoteIpAddress?.ToString();

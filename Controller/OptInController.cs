@@ -17,6 +17,8 @@ public class OptInController : ControllerBase
     private readonly OptInService _optInService;
     private readonly ILogger<OptInController> _logger;
 
+    private static readonly char[] _chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".ToCharArray();
+
     public OptInController(OptInService optInService, ILogger<OptInController> logger)
     {
         _optInService = optInService;
@@ -30,16 +32,13 @@ public class OptInController : ControllerBase
     /// Regras de negócio aplicadas automaticamente:
     ///
     /// **channel_opt_out + channel = "whatsapp"**
-    /// → whatsApp = N | email = mantém
+    /// → whatsApp = N | demais canais = S
     ///
     /// **channel_opt_out + channel = "email"**
-    /// → email = N | whatsApp = mantém
+    /// → email = N | demais canais = S
     ///
     /// **global_opt_out**
     /// → todos os canais = N (whatsApp, email, sms, phone, push, mail)
-    ///
-    /// Para idempotência, envie o header `Idempotency-Key` ou o campo `idempotencyKey` no body.
-    /// Requisições repetidas com a mesma chave retornam 200 sem reprocessar.
     /// </remarks>
     /// <param name="request">Dados do opt-out.</param>
     /// <response code="200">Opt-out processado com sucesso.</response>
@@ -64,15 +63,14 @@ public class OptInController : ControllerBase
                 StatusCode = 400
             });
 
-        // Idempotency-Key pode vir via header ou body
-        if (Request.Headers.TryGetValue("Idempotency-Key", out var headerKey) &&
-            string.IsNullOrEmpty(request.IdempotencyKey))
-        {
-            request.IdempotencyKey = headerKey.ToString();
-        }
+        // Gera chave de idempotência: 10 caracteres alfanuméricos aleatórios
+        var idempotencyKey = GerarChaveIdempotencia(10);
+        _logger.LogInformation("IdempotencyKey gerado: {Key}", idempotencyKey);
 
+        // IP do cliente para auditoria LGPD
         var ip = HttpContext.Connection.RemoteIpAddress?.ToString();
-        var result = await _optInService.ProcessOptOutAsync(request, ip);
+
+        var result = await _optInService.ProcessOptOutAsync(request, idempotencyKey, ip);
 
         if (!result.IsSuccess)
             return StatusCode(result.HttpStatusCode, new GatewayErrorResponse
@@ -86,5 +84,16 @@ public class OptInController : ControllerBase
             Description = result.Message,
             IdempotencyKey = result.IdempotencyKey
         });
+    }
+
+    /// <summary>
+    /// Gera uma chave de idempotência alfanumérica aleatória.
+    /// </summary>
+    private static string GerarChaveIdempotencia(int tamanho)
+    {
+        var random = new Random();
+        return new string(Enumerable.Range(0, tamanho)
+            .Select(_ => _chars[random.Next(_chars.Length)])
+            .ToArray());
     }
 }

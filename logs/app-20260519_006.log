@@ -1,0 +1,158 @@
+2026-05-19 15:10:31.618 -03:00 [INF] InterplayersGateway iniciado com sucesso.
+2026-05-19 15:10:31.743 -03:00 [INF] Now listening on: https://localhost:7121
+2026-05-19 15:10:31.747 -03:00 [INF] Now listening on: http://localhost:5113
+2026-05-19 15:10:31.790 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-19 15:10:31.792 -03:00 [INF] Hosting environment: Development
+2026-05-19 15:10:31.793 -03:00 [INF] Content root path: C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA
+2026-05-19 15:10:32.252 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+2026-05-19 15:10:32.492 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 241.2698ms
+2026-05-19 15:10:32.526 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-19 15:10:32.537 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - 200 14991 application/javascript; charset=utf-8 10.5422ms
+2026-05-19 15:10:32.937 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - null null
+2026-05-19 15:10:32.971 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.9921ms
+2026-05-19 15:10:33.150 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+2026-05-19 15:10:33.175 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.6477ms
+2026-05-19 15:11:02.655 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+2026-05-19 15:11:02.666 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 10.6929ms
+2026-05-19 15:11:02.725 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-19 15:11:02.735 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - 200 14991 application/javascript; charset=utf-8 9.7777ms
+2026-05-19 15:11:03.048 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - null null
+2026-05-19 15:11:03.058 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.717ms
+2026-05-19 15:11:03.157 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+2026-05-19 15:11:03.169 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.6077ms
+2026-05-19 15:11:39.308 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 111
+2026-05-19 15:11:39.317 -03:00 [INF] CORS policy execution successful.
+2026-05-19 15:11:39.323 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:11:39.350 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 15:11:39.387 -03:00 [INF] Enviando opt-out para Interplayers. Consumer=57103155742 Type=global_opt_out Channel=whatsapp
+2026-05-19 15:11:39.395 -03:00 [INF] Token Interplayers expirado ou ausente. Renovando...
+2026-05-19 15:11:39.404 -03:00 [INF] Start processing HTTP request POST https://account.iplayers.com.br/interplayersb2c.onmicrosoft.com/B2C_1_Loyalty/oauth2/v2.0/token
+2026-05-19 15:11:39.408 -03:00 [INF] Sending HTTP request POST https://account.iplayers.com.br/interplayersb2c.onmicrosoft.com/B2C_1_Loyalty/oauth2/v2.0/token
+2026-05-19 15:11:39.924 -03:00 [INF] Received HTTP response headers after 512.8719ms - 200
+2026-05-19 15:11:39.927 -03:00 [INF] End processing HTTP request after 527.6826ms - 200
+2026-05-19 15:11:39.939 -03:00 [INF] Token Interplayers renovado. Válido por 3300s.
+2026-05-19 15:11:39.945 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║              REQUISIÇÃO → INTERPLAYERS               ║
+╚══════════════════════════════════════════════════════╝
+Método  : PATCH
+URL     : https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/57/consumers/external/57103155742/opt-ins
+Headers :
+  Authorization : Bearer eyJhbGciOiJSUzI1NiIs...8YHv5_2p7A
+  Content-Type  : application/json
+Body    :
+{
+  "mail": "N",
+  "email": "N",
+  "phone": "N",
+  "sms": "N",
+  "push": "N",
+  "whatsApp": "N"
+}
+
+CURL equivalente:
+curl -X PATCH "https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/57/consumers/external/57103155742/opt-ins" \
+  -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhNjQ4NTUxNi0xOWZhLTQ3NjctYWNmMS03ZjhhMGQ4ZmE4YTMiLCJpc3MiOiJodHRwczovL2FjY291bnQuaXBsYXllcnMuY29tLmJyLzI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZC92Mi4wLyIsImV4cCI6MTc3OTIxNzg5OSwibmJmIjoxNzc5MjE0Mjk5LCJ0ZnAiOiJCMkNfMV9Mb3lhbHR5Iiwic2NwIjoiTG95YWx0eS5SZWFkIEFwcC5BZG1pbmlzdHJhdG9yLjU3IExveWFsdHkuQ29uc3VtZXJSZWdpc3RyYXRpb24uV3JpdGUgU3lzdGVtSWQuQURNMDQzOTQwNjE4MDFMIExveWFsdHkuV3JpdGUgTG95YWx0eS5Db25zdW1lckFkaGVzaW9uLldyaXRlIiwiYXpwYWNyIjoiMSIsInN1YiI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsIm9pZCI6ImYxNjA0MWIwLTViYmEtNDk4MC1iYWMxLTE0OWE5NzFkNzE2ZiIsInRpZCI6IjI3YjEwZTU2LTFjY2EtNDY4ZS04MGZlLWUyZjYwZjg1NDZjZCIsInZlciI6IjIuMCIsImF6cCI6IjAxNmNjMjMxLTY2YzgtNGZmMC1iYjZiLWQ0ZGQ3YWNlOTcwZCIsImlhdCI6MTc3OTIxNDI5OX0.dTp3AzgGObAOQp1WDYOuoYKluKCm07vN8N65VE5d9xKatDfCmKjmSDRdkLM1UcjO6QJ8pW_Cl0QYotMzeZXhbpg1khWWIDDrH_JQxxTm5mdjNF8yrOHvhvalUxPWbbSGkBefwWvCjBUGByn8z1Ism3RH5qafoq_luoIN68yjZxQYZcSQ9LPOuybGvEu0avD5ceZSqJxrsjt6NFflR_DmFEFKTwE0kPf9I_xDWx8ypRg_hyDCMX2FTlUMK6smWh7CNZHuYEsO2rx708-m2p_-0OeZSUecC2nMzL08Cj5rgmdb8NyH0J3tST2nYcp45_bvr9RK8LazQjw68YHv5_2p7A" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "mail": "N",
+  "email": "N",
+  "phone": "N",
+  "sms": "N",
+  "push": "N",
+  "whatsApp": "N"
+}'
+2026-05-19 15:11:39.949 -03:00 [INF] Start processing HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/57/consumers/external/57103155742/opt-ins
+2026-05-19 15:11:39.950 -03:00 [INF] Sending HTTP request PATCH https://api-mng.interplayers.com.br/loyalty-registration/v2/Registrations/administrators/57/consumers/external/57103155742/opt-ins
+2026-05-19 15:11:40.768 -03:00 [INF] Received HTTP response headers after 815.876ms - 200
+2026-05-19 15:11:40.770 -03:00 [INF] End processing HTTP request after 820.6056ms - 200
+2026-05-19 15:11:40.773 -03:00 [INF] 
+╔══════════════════════════════════════════════════════╗
+║             RESPOSTA ← INTERPLAYERS                  ║
+╚══════════════════════════════════════════════════════╝
+Status  : 200 OK
+Headers :
+  Transfer-Encoding: chunked
+  Request-Context: appId=cid-v1:ff420140-14a7-4478-beba-e65c3c490435
+  Date: Tue, 19 May 2026 18:11:39 GMT
+Body    :
+{
+  "description": "Prefer\u00EAncias de comunica\u00E7\u00E3o foram atualizadas com sucesso"
+}
+2026-05-19 15:11:40.785 -03:00 [INF] [AUDIT] Action=global_opt_out Consumer=57103155742 Origin=API Success=true StatusCode=200 IdempotencyKey=::1
+2026-05-19 15:11:40.801 -03:00 [INF] Executing OkObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewaySuccessResponse'.
+2026-05-19 15:11:40.813 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 1455.4043ms
+2026-05-19 15:11:40.815 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:11:40.819 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 200 in 1502.3558ms
+2026-05-19 15:11:40.821 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 200 null application/json; charset=utf-8 1513.3712ms
+2026-05-19 15:12:32.014 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 87
+2026-05-19 15:12:32.018 -03:00 [INF] CORS policy execution successful.
+2026-05-19 15:12:32.020 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:12:32.021 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 15:12:32.025 -03:00 [INF] Requisição idempotente ignorada. Key: ::1
+2026-05-19 15:12:32.028 -03:00 [INF] Executing OkObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewaySuccessResponse'.
+2026-05-19 15:12:32.030 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 6.3798ms
+2026-05-19 15:12:32.033 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:12:32.034 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 200 in 16.7308ms
+2026-05-19 15:12:32.037 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 200 null application/json; charset=utf-8 23.7267ms
+2026-05-19 15:12:35.866 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 87
+2026-05-19 15:12:35.969 -03:00 [INF] CORS policy execution successful.
+2026-05-19 15:12:35.970 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:12:35.971 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 15:12:35.976 -03:00 [INF] Requisição idempotente ignorada. Key: ::1
+2026-05-19 15:12:35.978 -03:00 [INF] Executing OkObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewaySuccessResponse'.
+2026-05-19 15:12:35.980 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 6.3901ms
+2026-05-19 15:12:35.988 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:12:35.999 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 200 in 31.1896ms
+2026-05-19 15:12:36.002 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 200 null application/json; charset=utf-8 135.5997ms
+2026-05-19 15:12:38.206 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 87
+2026-05-19 15:12:38.210 -03:00 [INF] CORS policy execution successful.
+2026-05-19 15:12:38.212 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:12:38.214 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 15:12:38.226 -03:00 [INF] Requisição idempotente ignorada. Key: ::1
+2026-05-19 15:12:38.228 -03:00 [INF] Executing OkObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewaySuccessResponse'.
+2026-05-19 15:12:38.230 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 4.584ms
+2026-05-19 15:12:38.233 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:12:38.234 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 200 in 24.4435ms
+2026-05-19 15:12:38.238 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 200 null application/json; charset=utf-8 32.5623ms
+2026-05-19 15:12:39.362 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 87
+2026-05-19 15:12:39.366 -03:00 [INF] CORS policy execution successful.
+2026-05-19 15:12:39.367 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:12:39.369 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 15:12:39.373 -03:00 [INF] Requisição idempotente ignorada. Key: ::1
+2026-05-19 15:12:39.374 -03:00 [INF] Executing OkObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewaySuccessResponse'.
+2026-05-19 15:12:39.376 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 4.1588ms
+2026-05-19 15:12:39.378 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:12:39.379 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 200 in 13.3532ms
+2026-05-19 15:12:39.381 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 200 null application/json; charset=utf-8 19.8123ms
+2026-05-19 15:12:52.598 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 111
+2026-05-19 15:12:52.602 -03:00 [INF] CORS policy execution successful.
+2026-05-19 15:12:52.604 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:12:52.608 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 15:12:52.611 -03:00 [INF] Requisição idempotente ignorada. Key: ::1
+2026-05-19 15:12:52.612 -03:00 [INF] Executing OkObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewaySuccessResponse'.
+2026-05-19 15:12:52.614 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 4.0531ms
+2026-05-19 15:12:52.617 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:12:52.619 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 200 in 17.1308ms
+2026-05-19 15:12:52.623 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 200 null application/json; charset=utf-8 25.5355ms
+2026-05-19 15:13:01.456 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 111
+2026-05-19 15:13:01.461 -03:00 [INF] CORS policy execution successful.
+2026-05-19 15:13:01.463 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:13:01.465 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 15:13:01.468 -03:00 [INF] Requisição idempotente ignorada. Key: ::1
+2026-05-19 15:13:01.469 -03:00 [INF] Executing OkObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewaySuccessResponse'.
+2026-05-19 15:13:01.471 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 3.4774ms
+2026-05-19 15:13:01.473 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:13:01.475 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 200 in 13.4850ms
+2026-05-19 15:13:01.477 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 200 null application/json; charset=utf-8 21.1654ms
+2026-05-19 15:13:05.621 -03:00 [INF] Request starting HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - application/json 111
+2026-05-19 15:13:05.626 -03:00 [INF] CORS policy execution successful.
+2026-05-19 15:13:05.627 -03:00 [INF] Executing endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:13:05.629 -03:00 [INF] Route matched with {action = "OptOut", controller = "OptIn"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OptOut(DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests.OptOutRequest) on controller DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController (InterplayersGateway).
+2026-05-19 15:13:05.633 -03:00 [INF] Requisição idempotente ignorada. Key: ::1
+2026-05-19 15:13:05.635 -03:00 [INF] Executing OkObjectResult, writing value of type 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses.GatewaySuccessResponse'.
+2026-05-19 15:13:05.637 -03:00 [INF] Executed action DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway) in 4.1257ms
+2026-05-19 15:13:05.639 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
+2026-05-19 15:13:05.641 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 200 in 15.3413ms
+2026-05-19 15:13:05.644 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 200 null application/json; charset=utf-8 22.2073ms
+2026-05-19 15:16:31.199 -03:00 [INF] Iniciando InterplayersGateway...

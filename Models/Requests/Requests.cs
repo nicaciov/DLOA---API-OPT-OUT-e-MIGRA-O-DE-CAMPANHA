@@ -4,13 +4,11 @@ namespace DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests;
 
 /// <summary>
 /// Representa uma requisição de opt-out enviada ao gateway.
-/// Tarefa 1: suporta identificação por ID, telefone ou e-mail.
 /// </summary>
 public class OptOutRequest
 {
     /// <summary>
     /// ID externo do consumidor no Logix (IdCons).
-    /// Ao menos um de: ConsumerId, Phone ou Email deve ser informado.
     /// </summary>
     public string? ConsumerId { get; set; }
 
@@ -33,12 +31,6 @@ public class OptOutRequest
     /// </summary>
     [Required(ErrorMessage = "Origin é obrigatório para log de auditoria.")]
     public string Origin { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Chave de idempotência (opcional via body).
-    /// Recomendado: usar o header Idempotency-Key em vez deste campo.
-    /// </summary>
-    public string? IdempotencyKey { get; set; }
 }
 
 /// <summary>
@@ -74,10 +66,15 @@ public class CampaignMigrateRequest
 
 /// <summary>
 /// Payload interno enviado para o endpoint /opt-ins da Interplayers.
-/// Campos nulos são ignorados na serialização — campo ausente = mantém valor atual.
+/// Todos os campos são sempre enviados para evitar o erro LR52.
 /// </summary>
 public class InterplayersOptInPayload
 {
+    [System.Text.Json.Serialization.JsonIgnore(
+        Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    [System.Text.Json.Serialization.JsonPropertyName("informativeMaterial")]
+    public string? InformativeMaterial { get; set; }
+
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
     [System.Text.Json.Serialization.JsonPropertyName("mail")]

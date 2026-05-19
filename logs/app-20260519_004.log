@@ -1,0 +1,18 @@
+2026-05-19 15:03:10.232 -03:00 [INF] InterplayersGateway iniciado com sucesso.
+2026-05-19 15:03:10.374 -03:00 [INF] Now listening on: https://localhost:7121
+2026-05-19 15:03:10.377 -03:00 [INF] Now listening on: http://localhost:5113
+2026-05-19 15:03:10.421 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-19 15:03:10.423 -03:00 [INF] Hosting environment: Development
+2026-05-19 15:03:10.425 -03:00 [INF] Content root path: C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA
+2026-05-19 15:03:10.613 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+2026-05-19 15:03:10.778 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 165.5693ms
+2026-05-19 15:03:11.331 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-19 15:03:11.335 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - null null
+2026-05-19 15:03:11.342 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - 200 14991 application/javascript; charset=utf-8 10.4208ms
+2026-05-19 15:03:11.382 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.525ms
+2026-05-19 15:03:11.502 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+2026-05-19 15:03:11.521 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/favicon-32x32.png - null null
+2026-05-19 15:03:11.525 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.2742ms
+2026-05-19 15:03:11.540 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-05-19 15:03:11.544 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/favicon-32x32.png - 200 628 image/png 22.2167ms
+2026-05-19 15:03:33.613 -03:00 [INF] Iniciando InterplayersGateway...

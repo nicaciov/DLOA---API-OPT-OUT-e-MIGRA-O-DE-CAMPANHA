@@ -1,9 +1,10 @@
-using System.Net.Http.Headers;
-using System.Text.Json;
 using DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Infrastructure;
 using DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models;
 using DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Requests;
 using DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Models.Responses;
+using System.Net.Http.Headers;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Services;
 
@@ -12,9 +13,12 @@ namespace DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Services;
 /// comunicação no Logix via API da Interplayers.
 ///
 /// Tarefa 1 — regras de negócio implementadas:
-///   channel_opt_out + whatsapp  → whatsApp = "N", demais canais mantidos
-///   channel_opt_out + email     → email = "N", demais canais mantidos
+///   channel_opt_out + whatsapp  → whatsApp = "N", demais canais = "S"
+///   channel_opt_out + email     → email = "N", demais canais = "S"
 ///   global_opt_out              → todos os canais = "N"
+///
+/// Nota: Todos os 7 campos (incluindo informativeMaterial) são sempre enviados
+/// para evitar o erro LR52 da Interplayers.
 /// </summary>
 public class OptInService
 {
@@ -44,11 +48,9 @@ public class OptInService
     /// <summary>
     /// Processa um opt-out aplicando as regras de negócio e chamando a Interplayers.
     /// </summary>
-    /// <returns>ServiceResult indicando sucesso ou erro.</returns>
-    public async Task<ServiceResult> ProcessOptOutAsync(OptOutRequest request, string? requestIp = null)
+    public async Task<ServiceResult> ProcessOptOutAsync(OptOutRequest request, string idempotencyKey, string? requestIp = null)
     {
         // --- Idempotência ---
-        var idempotencyKey = request.IdempotencyKey;
         if (!string.IsNullOrEmpty(idempotencyKey))
         {
             if (_idempotency.IsAlreadyProcessed(idempotencyKey))
@@ -62,7 +64,7 @@ public class OptInService
         var (consumerId, identifierType) = ResolveConsumerId(request);
         if (string.IsNullOrEmpty(consumerId))
         {
-            return ServiceResult.Failure("Nenhum identificador válido informado. Informe ConsumerId, Phone ou Email.", 400);
+            return ServiceResult.Failure("Nenhum identificador válido informado. Informe ConsumerId.", 400);
         }
 
         // --- Validar tipo de opt-out ---
@@ -77,16 +79,8 @@ public class OptInService
             return ServiceResult.Failure("Channel é obrigatório quando OptOutType = 'channel_opt_out'.", 400);
         }
 
-        // --- Buscar estado atual do consumidor (necessário para channel_opt_out) ---
-        var currentOptIns = await GetCurrentOptInsAsync(consumerId);
-        if (currentOptIns == null)
-        {
-            _logger.LogWarning("Consumidor {ConsumerId} não encontrado ou sem dados de preferência.", consumerId);
-            return ServiceResult.Failure("Consumidor não encontrado na base Interplayers.", 404);
-        }
-
         // --- Aplicar regras de negócio ---
-        var payload = BuildOptInPayload(request, currentOptIns);
+        var payload = BuildOptInPayload(request);
 
         // --- Chamar Interplayers ---
         var adminId = _config["Interplayers:AdministratorId"];
@@ -137,89 +131,18 @@ public class OptInService
     // ─── Privados ────────────────────────────────────────────────────────────
 
     /// <summary>
-    /// Busca o estado atual de opt-ins do consumidor na Interplayers.
-    /// Necessário para manter outros canais intactos em channel_opt_out.
+    /// Monta o payload com todos os 7 campos sempre preenchidos.
+    ///
+    /// channel_opt_out → canal solicitado = "N", todos os outros = "S"
+    /// global_opt_out  → todos os canais = "N" (incluindo informativeMaterial)
     /// </summary>
-    private async Task<InterplayersOptInPayload?> GetCurrentOptInsAsync(string consumerId)
-    {
-        try
-        {
-            var token = await _authService.GetTokenAsync();
-            var client = _httpClientFactory.CreateClient("interplayers");
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-            var adminId = _config["Interplayers:AdministratorId"];
-            var baseUrl = _config["Interplayers:BaseUrlRegistration"];
-            var url = $"{baseUrl}/v2/Registrations/administrators/{adminId}/consumers/external/{consumerId}";
-
-            _logger.LogInformation("Buscando opt-ins atuais. URL={Url}", url);
-
-            var response = await client.GetAsync(url);
-            var statusCode = (int)response.StatusCode;
-
-            var content = await response.Content.ReadAsStringAsync();
-
-            if (!response.IsSuccessStatusCode)
-            {
-                _logger.LogWarning("Falha ao buscar opt-ins atuais. Status={Status} Body={Body}", 
-                    statusCode, content);
-                return null;
-            }
-
-            if (string.IsNullOrEmpty(content))
-            {
-                _logger.LogWarning("Resposta vazia ao buscar opt-ins do consumidor {ConsumerId}", consumerId);
-                return null;
-            }
-
-            _logger.LogDebug("Resposta de opt-ins: {Content}", content);
-
-            // TODO: Ajuste conforme a estrutura real da resposta da Interplayers
-            var result = System.Text.Json.JsonSerializer.Deserialize<dynamic>(content);
-            
-            // Exemplo: extrair do objeto aninhado
-            return new InterplayersOptInPayload
-            {
-                WhatsApp = GetFieldValue(result, "whatsApp") ?? "Y",
-                Email = GetFieldValue(result, "email") ?? "Y",
-                Phone = GetFieldValue(result, "phone") ?? "Y",
-                Sms = GetFieldValue(result, "sms") ?? "Y",
-                Push = GetFieldValue(result, "push") ?? "Y",
-                Mail = GetFieldValue(result, "mail") ?? "Y"
-            };
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Erro ao buscar opt-ins atuais do consumidor {ConsumerId}", consumerId);
-            return null;
-        }
-    }
-
-    private static string? GetFieldValue(dynamic obj, string fieldName)
-    {
-        try
-        {
-            var value = obj?[fieldName]?.ToString();
-            return value;
-        }
-        catch
-        {
-            return null;
-        }
-    }
-
-    /// <summary>
-    /// Regras de negócio:
-    /// - channel_opt_out whatsapp → whatsApp = N (outros mantêm valor atual)
-    /// - channel_opt_out email    → email = N (outros mantêm valor atual)
-    /// - global_opt_out           → todos = N
-    /// </summary>
-    private static InterplayersOptInPayload BuildOptInPayload(OptOutRequest request, InterplayersOptInPayload currentState)
+    private static InterplayersOptInPayload BuildOptInPayload(OptOutRequest request)
     {
         if (request.OptOutType == "global_opt_out")
         {
             return new InterplayersOptInPayload
             {
+                InformativeMaterial = "N",
                 WhatsApp = "N",
                 Email = "N",
                 Phone = "N",
@@ -229,62 +152,68 @@ public class OptInService
             };
         }
 
-        // channel_opt_out — desabilita apenas o canal solicitado, mantém outros
+        // channel_opt_out — canal solicitado = "N", todos os outros = "S"
         var channel = request.Channel?.ToLowerInvariant();
         return channel switch
         {
             "whatsapp" => new InterplayersOptInPayload
             {
+                InformativeMaterial = "S",
                 WhatsApp = "N",
-                Email = currentState.Email,
-                Phone = currentState.Phone,
-                Sms = currentState.Sms,
-                Push = currentState.Push,
-                Mail = currentState.Mail
+                Email = "S",
+                Phone = "S",
+                Sms = "S",
+                Push = "S",
+                Mail = "S"
             },
             "email" => new InterplayersOptInPayload
             {
-                WhatsApp = currentState.WhatsApp,
+                InformativeMaterial = "S",
+                WhatsApp = "S",
                 Email = "N",
-                Phone = currentState.Phone,
-                Sms = currentState.Sms,
-                Push = currentState.Push,
-                Mail = currentState.Mail
+                Phone = "S",
+                Sms = "S",
+                Push = "S",
+                Mail = "S"
             },
             "sms" => new InterplayersOptInPayload
             {
-                WhatsApp = currentState.WhatsApp,
-                Email = currentState.Email,
-                Phone = currentState.Phone,
+                InformativeMaterial = "S",
+                WhatsApp = "S",
+                Email = "S",
+                Phone = "S",
                 Sms = "N",
-                Push = currentState.Push,
-                Mail = currentState.Mail
+                Push = "S",
+                Mail = "S"
             },
             "phone" => new InterplayersOptInPayload
             {
-                WhatsApp = currentState.WhatsApp,
-                Email = currentState.Email,
+                InformativeMaterial = "S",
+                WhatsApp = "S",
+                Email = "S",
                 Phone = "N",
-                Sms = currentState.Sms,
-                Push = currentState.Push,
-                Mail = currentState.Mail
+                Sms = "S",
+                Push = "S",
+                Mail = "S"
             },
             "push" => new InterplayersOptInPayload
             {
-                WhatsApp = currentState.WhatsApp,
-                Email = currentState.Email,
-                Phone = currentState.Phone,
-                Sms = currentState.Sms,
+                InformativeMaterial = "S",
+                WhatsApp = "S",
+                Email = "S",
+                Phone = "S",
+                Sms = "S",
                 Push = "N",
-                Mail = currentState.Mail
+                Mail = "S"
             },
             "mail" => new InterplayersOptInPayload
             {
-                WhatsApp = currentState.WhatsApp,
-                Email = currentState.Email,
-                Phone = currentState.Phone,
-                Sms = currentState.Sms,
-                Push = currentState.Push,
+                InformativeMaterial = "S",
+                WhatsApp = "S",
+                Email = "S",
+                Phone = "S",
+                Sms = "S",
+                Push = "S",
                 Mail = "N"
             },
             _ => throw new ArgumentException($"Canal inválido: '{request.Channel}'.")
@@ -292,12 +221,7 @@ public class OptInService
     }
 
     /// <summary>
-    /// Resolve o identificador do consumidor.
-    /// Prioridade: ConsumerId → Phone → Email.
-    ///
-    /// NOTA: lookup por phone/email precisa de endpoint da Interplayers ou
-    /// consulta local — implemente ResolveByPhoneAsync / ResolveByEmailAsync
-    /// conforme disponibilidade da API.
+    /// Resolve o identificador do consumidor a partir do request.
     /// </summary>
     private static (string? consumerId, string identifierType) ResolveConsumerId(OptOutRequest request)
     {
@@ -314,6 +238,36 @@ public class OptInService
         var client = _httpClientFactory.CreateClient("interplayers");
         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
+        // --- Log completo da requisição (evidência) ---
+        var payloadJson = JsonSerializer.Serialize(payload, new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+        });
+
+        var tokenPreview = token.Length > 20
+            ? $"{token[..20]}...{token[^10..]}"
+            : token;
+
+        _logger.LogInformation(
+            "\n╔══════════════════════════════════════════════════════╗" +
+            "\n║              REQUISIÇÃO → INTERPLAYERS               ║" +
+            "\n╚══════════════════════════════════════════════════════╝" +
+            "\nMétodo  : PATCH" +
+            "\nURL     : {Url}" +
+            "\nHeaders :" +
+            "\n  Authorization : Bearer {TokenPreview}" +
+            "\n  Content-Type  : application/json" +
+            "\nBody    :\n{Payload}" +
+            "\n\nCURL equivalente:" +
+            "\ncurl -X PATCH \"{Url}\" \\" +
+            "\n  -H \"Authorization: Bearer {Token}\" \\" +
+            "\n  -H \"Content-Type: application/json\" \\" +
+            "\n  -d '{PayloadCurl}'",
+            url, tokenPreview, payloadJson,
+            url, token, payloadJson.Replace("'", "'\\''"));
+        // -----------------------------------------------
+
         HttpResponseMessage response;
         try
         {
@@ -325,22 +279,49 @@ public class OptInService
             return (502, "CONN_ERROR", "Falha de conexão com a Interplayers.");
         }
 
+        // --- Log completo da resposta (evidência) ---
+        var responseBody = await response.Content.ReadAsStringAsync();
+        var formattedBody = responseBody;
+        try
+        {
+            if (!string.IsNullOrEmpty(responseBody))
+            {
+                var doc = JsonDocument.Parse(responseBody);
+                formattedBody = JsonSerializer.Serialize(doc, new JsonSerializerOptions { WriteIndented = true });
+            }
+        }
+        catch { /* mantém body original se não for JSON */ }
+
+        var responseHeaders = string.Join("\n  ", response.Headers
+            .Select(h => $"{h.Key}: {string.Join(", ", h.Value)}"));
+
+        _logger.LogInformation(
+            "\n╔══════════════════════════════════════════════════════╗" +
+            "\n║             RESPOSTA ← INTERPLAYERS                  ║" +
+            "\n╚══════════════════════════════════════════════════════╝" +
+            "\nStatus  : {StatusCode} {ReasonPhrase}" +
+            "\nHeaders :\n  {Headers}" +
+            "\nBody    :\n{Body}",
+            (int)response.StatusCode,
+            response.ReasonPhrase,
+            string.IsNullOrEmpty(responseHeaders) ? "(nenhum)" : responseHeaders,
+            string.IsNullOrEmpty(formattedBody) ? "(vazio)" : formattedBody);
+        // -----------------------------------------------
+
         var statusCode = (int)response.StatusCode;
 
         if (response.IsSuccessStatusCode)
             return (statusCode, null, null);
 
-        // Tenta extrair código de erro da Interplayers
         try
         {
-            var contentLength = response.Content.Headers.ContentLength ?? 0;
-            if (contentLength == 0)
+            if (string.IsNullOrEmpty(responseBody))
             {
                 _logger.LogWarning("Interplayers retornou resposta vazia. Status={Status}", statusCode);
                 return (statusCode, "EMPTY_RESPONSE", "Interplayers retornou resposta vazia.");
             }
 
-            var errorBody = await response.Content.ReadFromJsonAsync<InterplayersErrorResponse>();
+            var errorBody = JsonSerializer.Deserialize<InterplayersErrorResponse>(responseBody);
             var code = errorBody?.Data?.Error ?? errorBody?.Message ?? "UNKNOWN";
             var desc = errorBody?.Data?.ErrorDescription ?? errorBody?.Message ?? "Erro desconhecido.";
             return (statusCode, code, desc);
