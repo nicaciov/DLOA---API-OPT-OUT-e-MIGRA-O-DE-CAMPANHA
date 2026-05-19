@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InterplayersGateway")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1ee198f5c977ca58c8d9fa5d08b342b719e92b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9220bb728797991735013fc5a219295a6b11cb17")]
 [assembly: System.Reflection.AssemblyProductAttribute("InterplayersGateway")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InterplayersGateway")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

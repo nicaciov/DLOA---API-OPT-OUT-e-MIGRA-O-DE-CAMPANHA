@@ -246,10 +246,6 @@
           "origin": {
             "minLength": 1,
             "type": "string"
-          },
-          "idempotencyKey": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false

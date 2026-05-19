@@ -51,8 +51,11 @@ public class CampaignController : ControllerBase
     [ProducesResponseType(typeof(GatewayErrorResponse), 400)]
     [ProducesResponseType(typeof(GatewayErrorResponse), 404)]
     [ProducesResponseType(typeof(GatewayErrorResponse), 502)]
-    public async Task<IActionResult> Migrate([FromBody] CampaignMigrateRequest request)
+    public async Task<IActionResult> Migrate([FromBody] CampaignMigrateRequest request, [FromQuery] string apiKey = "")
     {
+        if (!apiKey.Equals("V3lSccRdH3P8WdxCZWvMSvsj1"))
+            return Unauthorized(new { mensagem = "API Key inválida." });
+
         if (!ModelState.IsValid)
             return BadRequest(new GatewayErrorResponse
             {

@@ -88,3 +88,4 @@ Body    :
 2026-05-19 15:23:57.739 -03:00 [INF] Executed endpoint 'DLOA___API_OPT_OUT_e_MIGRAÇÃO_DE_CAMPANHA.Controller.OptInController.OptOut (InterplayersGateway)'
 2026-05-19 15:23:57.743 -03:00 [INF] HTTP PATCH /api/OptIn/opt-out responded 200 in 1930.1501ms
 2026-05-19 15:23:57.749 -03:00 [INF] Request finished HTTP/2 PATCH https://localhost:7121/api/OptIn/opt-out - 200 null application/json; charset=utf-8 1944.4692ms
+2026-05-19 15:34:11.586 -03:00 [INF] Iniciando InterplayersGateway...
