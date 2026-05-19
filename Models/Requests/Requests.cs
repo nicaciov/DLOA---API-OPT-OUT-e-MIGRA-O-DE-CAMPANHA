@@ -49,19 +49,7 @@ public class CampaignMigrateRequest
 
     /// <summary>ID da campanha de destino (indicação do paciente).</summary>
     [Required(ErrorMessage = "NewCampaignId é obrigatório.")]
-    public string NewCampaignId { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Texto da indicação informada pelo paciente (ex: "Indicação A").
-    /// Usado apenas para auditoria e log — não vai para a Interplayers.
-    /// </summary>
-    public string? Indication { get; set; }
-
-    /// <summary>Origem da solicitação. Padrão: "WPP_FLOW".</summary>
-    public string Origin { get; set; } = "WPP_FLOW";
-
-    /// <summary>Chave de idempotência (opcional via body).</summary>
-    public string? IdempotencyKey { get; set; }
+    public string NewCampaignId { get; set; } = string.Empty; 
 }
 
 /// <summary>

@@ -1,0 +1,23 @@
+2026-05-19 15:50:14.379 -03:00 [INF] InterplayersGateway iniciado com sucesso.
+2026-05-19 15:50:14.539 -03:00 [INF] Now listening on: https://localhost:7121
+2026-05-19 15:50:14.542 -03:00 [INF] Now listening on: http://localhost:5113
+2026-05-19 15:50:14.586 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-19 15:50:14.587 -03:00 [INF] Hosting environment: Development
+2026-05-19 15:50:14.589 -03:00 [INF] Content root path: C:\Users\nicac\OneDrive\DESENVOLVIMENTO\C#\nicaciov\DLOA - API OPT-OUT e MIGRAÇÃO DE CAMPANHA
+2026-05-19 15:50:15.612 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+2026-05-19 15:50:15.932 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 320.5027ms
+2026-05-19 15:50:15.994 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-19 15:50:16.005 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - 200 14991 application/javascript; charset=utf-8 10.1156ms
+2026-05-19 15:50:16.552 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - null null
+2026-05-19 15:50:16.606 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.408ms
+2026-05-19 15:50:16.716 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+2026-05-19 15:50:16.736 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.7674ms
+2026-05-19 15:50:39.468 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+2026-05-19 15:50:39.484 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 15.0861ms
+2026-05-19 15:50:39.534 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-19 15:50:39.543 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - 200 14991 application/javascript; charset=utf-8 7.1642ms
+2026-05-19 15:50:39.876 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - null null
+2026-05-19 15:50:39.884 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.22ms
+2026-05-19 15:50:39.981 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+2026-05-19 15:50:39.990 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.9498ms
+2026-05-19 15:52:46.143 -03:00 [INF] Iniciando InterplayersGateway...

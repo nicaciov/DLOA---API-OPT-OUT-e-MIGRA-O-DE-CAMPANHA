@@ -4,8 +4,8 @@
     "title": "Interplayers Gateway API",
     "description": "Gateway para encapsulamento das APIs da plataforma Interplayers Loyalty.\n\n**Tarefa 1:** Opt-out de canais de comunicação (LGPD)\n\n**Tarefa 2:** Migração de campanha para segmentação de pacientes PDV",
     "contact": {
-      "name": "Nicacio INC",
-      "email": "dev@nicacio.com.br"
+      "name": "Em caso de dúvidas, entre em contato com: vitor.nicacio@dloa.com.br",
+      "email": "vitor.nicacio@dloa.com.br"
     },
     "version": "v1"
   },
@@ -14,6 +14,16 @@
       "patch": {
         "tags": [
           "Campaign"
+        ],
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          }
         ],
         "requestBody": {
           "content": {
@@ -82,6 +92,16 @@
       "patch": {
         "tags": [
           "OptIn"
+        ],
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          }
         ],
         "requestBody": {
           "content": {
@@ -168,18 +188,6 @@
           "newCampaignId": {
             "minLength": 1,
             "type": "string"
-          },
-          "indication": {
-            "type": "string",
-            "nullable": true
-          },
-          "origin": {
-            "type": "string",
-            "nullable": true
-          },
-          "idempotencyKey": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false

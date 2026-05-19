@@ -64,20 +64,7 @@ public class CampaignController : ControllerBase
                     .SelectMany(v => v.Errors)
                     .Select(e => e.ErrorMessage)),
                 StatusCode = 400
-            });
-
-        // Idempotency-Key: usa o do header/body se informado, senão gera automaticamente
-        if (Request.Headers.TryGetValue("Idempotency-Key", out var headerKey) &&
-            !string.IsNullOrEmpty(headerKey.ToString()))
-        {
-            request.IdempotencyKey = headerKey.ToString();
-        }
-
-        if (string.IsNullOrEmpty(request.IdempotencyKey))
-        {
-            request.IdempotencyKey = Guid.NewGuid().ToString("N");
-            _logger.LogInformation("IdempotencyKey gerado automaticamente: {Key}", request.IdempotencyKey);
-        }
+            }); 
 
         var ip = HttpContext.Connection.RemoteIpAddress?.ToString();
         var result = await _migrationService.MigrateCampaignAsync(request, ip);

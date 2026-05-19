@@ -11,6 +11,11 @@
         "Name": "request",
         "Type": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Models.Requests.CampaignMigrateRequest",
         "IsRequired": true
+      },
+      {
+        "Name": "apiKey",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
@@ -56,6 +61,11 @@
         "Name": "request",
         "Type": "DLOA___API_OPT_OUT_e_MIGRA\u00C7\u00C3O_DE_CAMPANHA.Models.Requests.OptOutRequest",
         "IsRequired": true
+      },
+      {
+        "Name": "apiKey",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
